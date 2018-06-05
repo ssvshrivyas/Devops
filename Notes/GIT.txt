@@ -1,0 +1,179 @@
+A tool is much more lighter and improve the process
+GIT vs SVN
+limitation of how many branches can be used
+more the branches created more it ll be diff for administration
+devs need more branches
+
+
+GIT helps the above reason
+git is a distributed tool  
+
+devops
+how smooth can we keep the process
+in git huge process can be handled efficiently
+server
+repository
+workspace
+branches
+check in checkout
+revision
+baseline
+
+one central repository where the devs store their 
+
+there is no server
+everything is a workspace and every workspace will have a default repository in it.
+
+workspace  
+
+workspace - give the path of the workspace and they can share
+
+central workspace
+
+very first time we ll create a workspace
+he ll clone the central repository
+central repository local repository
+until u dont share with the central it ll be present here
+snapshot-git uses this to store details 
+delta or diff which is there..will take a snapshot of it
+commit id SHA-1 hash 40 characaters
+checksum data mix of number and alaphabet 
+whenever u do a build or handover artifacts to a customer
+for a given file with a content we can convert into a bit value.
+amount of bit value in a file.
+they ll generate the checksum and verify it.
+what u had and what u r modifying and trying to change
+object or a tree.
+one snapshot will be linked with the previous snapshot
+date time who modified
+commit id- 64 bit sha-1 hash value
+MD 5 checksum tool on linux...
+
+every workspace in git can be divided into 3 spaces
+workspace as a whole
+-working directory- directory inside the workspace where we can see the files and modify the files
+once the changes is done then store it in the repository
+first we need to take a snapshot
+-staging area-adding file from working directory to staging area git will take a snapshot
+-repository
+the changes thats in the staging area that will be commmitted to the repository
+changes in the working directory- staging area for taking a snapshot- then we committ
+the file will be stored into the repository permanently 
+for each content we ll get a 64 bit value
+checksum difference from the changes
+Git understands files as tracked n untracked
+when u r creating a new file only in the working directory and no ref in the repository that is called untracked
+first time we create a file in the workspace not in repository is called untracked
+staging area is a part of a repository
+stored in repository is a tracked file.
+
+unmodified - if it is referred in the repository and not changed then it is unmodified
+if there is some change in workspace then the file is called modified file
+when compared to content what the repository holds if there is a change it is modified
+stage the file- the changes will be treated as a snapshot purpose
+whatever we are storing in the repository gets to unmodified
+starts from untracked-tracked-unmodified-modified-untracked
+
+central repository for the team to make changes
+2 repositories
+bare-where u ll be able to store changes and share changes
+central repo or remote repo wil be bare
+strictly for sharing and storing
+non-bare 
+user workspaces will be off the type wil be non bare
+store,share and modify the files
+
+  create a central repository from where users create their workspace
+
+central repository is a bare repository
+
+git clone origin destination
+
+
+how do we modify and put it in GIT
+we are in working directory..
+now we need to put my working file in staging area
+for that we add the file to staging area using git add
+
+when we use git commit 
+whatever is available in staging are and everything will be taken as a snapshot and create a commit id
+
+
+git config --global user.name "username"
+git config --global user.email "email"
+
+are to be assigned to the commits we make in the repository
+
+git init
+
+this initializes a local repository
+
+git clone "address of the repository"
+
+this creates a working copy of the central repository in our local repository
+
+git add "filename"
+this adds a single file into the staging area
+git add * 
+this adds multiple files into the staging area
+git status
+this shows the list of the files and their status as tracked or untracked
+git commit -m "message"
+this updates into our local repository that is head
+git push 
+this sends the files to the central repository
+git push origin master 
+this updates the branch of the remote repository
+git create branch "branchname"
+this creates a branch at the master
+git checkout "branch name"
+this helps to change from one branch to another.
+git checkout -b "branchname"
+this is a combination of operations. this creates a new branch and checksout to it.
+git branch -d "branchname"
+this deletes the branch we have give 
+git push origin "branch name"
+this command is used to push the branch we created to the central repository
+git push origin :"branch name"
+this command is used to delete the branch in central repository
+git pull
+this is a combination of 
+git fetch and git merge
+this fetches and merges the changes that are made to the central repository
+git fetch 
+this command gets all the commit id that are have been updated in the remote repository
+git merge "branchname"
+this command merges the branch with our current active branch
+
+git log
+
+gives all the details of the last commits with their ids starting with the recent ones'
+
+.gitignore
+this command is used when there are username and pwd credentials to be used by a particular person. this command does make the user use their credentials rather than others.
+
+git cherrypick "branchname"
+this is used in enterprise when the build is complete and has to be added to the company's main repository 
+
+git rebase "master"
+git rebase "master" "branch"
+this command first of all checksout the branch automatically rather than going to that branch.
+
+git revert 
+
+this command helps when the files are commited into the local repository but not yet pushed into the central repository 
+this reset the changes
+
+git reset head
+
+this commands gets the file that's in the staging area to unstaged.
+
+git reset soft 
+
+this command gets the file that has been committed to the staging area.
+
+git reset mixed 
+
+this command gets the file that has been in committed and unstages it.
+
+  
