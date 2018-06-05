@@ -1,0 +1,67 @@
+Continuous Integrations
+Integrated
+built
+Test
+Archived 
+Deployed
+
+1) compilation
+2) generation of jar files
+3) deploy them
+4) run them
+
+set nu for setting commands
+
+line 15 to line 21
+go to that line and type number of lines yy
+and p wherever u want to paste
+
+
+Ant scripts can be used to automate the above steps
+they are XML files
+
+Deployment profiles/Archives
+----------------------------
+jar=> collection of java classes
+war=> collection of UI components->js,css,jsp,jsf
+ear=> collection of jars+wars
+
+jar cvf file.java
+file.jar
+
+<?xml version>
+master element
+root element
+child element
+
+extend the exsisting ant scripts.
+build.xml
+(we ll specify all the operations to performs
+tasks are the actions or the commands that you can execute on a shell)
+tasks can have multiple parameters
+mkdir-task
+directory name- is the parameter
+ant needs build.xml
+build.xl=>it is the file where all tasks are defined
+
+each project 1 or more targets
+each target has 1 or more tasks
+
+property is created to give same parameter as a generic value
+each property in a file should be unique
+${name of the property}- creates the parameter defined to that property
+target names are case sensitive
+property has a name and a value
+it is case sensitive
+
+edit a present ant script
+
+<project name ="name of the project" default="name of the target">
+above is the tags for the giving the name of the project
+default helps in giving the target name that has to be accessed.
+</project>
+<target = "name of the target "></target?
+this is a section to run whenever it is specified in the head tag of the build file
+<echo message=""/>
+this prints a message in the console when apache ant builds the .xml file
+
